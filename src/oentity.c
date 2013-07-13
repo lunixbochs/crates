@@ -45,7 +45,7 @@ OEntity *oentity_new(const ochar *name, const ochar *initattributes, const oint3
   entity->id = id;
   entity->alive = 1;
   entity->postrenderable = 0;
-  entity->textureid = -1;
+  entity->textureid = 0;
   entity->listid    = -1;
   strncat(path, name, maxnlen);
   strcat(path, ".lua");
@@ -218,7 +218,7 @@ void oentity_onrender(OEntity *entity)
   if (entity->rotation->z)
     glRotatef(entity->rotation->z, 0, 0, 1);
 
-  if (entity->textureid > -1)
+  if (entity->textureid)
     glBindTexture(GL_TEXTURE_2D, entity->textureid);
 
   if (entity->listid > -1)
