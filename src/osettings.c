@@ -81,8 +81,8 @@ static OString *getsettings(OScriptManager *scriptmanager, const ochar *fieldnam
 
 OSettings *osettings_new(OScriptManager *scriptmanager)
 {
-  ochar path[] = "resources/config.lua";
-  ochar logfilename[] = "resources/log.txt";
+  ochar path[] = "config.lua";
+  ochar logfilename[] = "log.txt";
   OSettings *settings = (OSettings*)oerror_malloc(sizeof(OSettings));
   settings->screenwidth                       = 0;
   settings->screenheight                      = 0;
